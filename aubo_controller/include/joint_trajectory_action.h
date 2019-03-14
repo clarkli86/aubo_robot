@@ -168,7 +168,7 @@ private:
   industrial_msgs::RobotStatusConstPtr last_robot_status_;
 
   /**
-   * \brief Time at which to start checking for completion of current 
+   * \brief Time at which to start checking for completion of current
    * goal, if one is active
    */
   ros::Time time_to_check_;
@@ -192,7 +192,7 @@ private:
    * \param gh goal handle
    *
    */
-  void goalCB(JointTractoryActionServer::GoalHandle & gh);
+  void goalCB(JointTractoryActionServer::GoalHandle gh);
 
   /**
    * \brief Action server cancel callback method
@@ -201,7 +201,7 @@ private:
    *
    */
 
-  void cancelCB(JointTractoryActionServer::GoalHandle & gh);
+  void cancelCB(JointTractoryActionServer::GoalHandle gh);
   /**
    * \brief Controller state callback (executed when feedback message
    * received)

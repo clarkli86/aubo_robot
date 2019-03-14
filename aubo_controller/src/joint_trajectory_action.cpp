@@ -136,7 +136,7 @@ void JointTrajectoryAction::watchdog(const ros::TimerEvent &e)
   }
 }
 
-void JointTrajectoryAction::goalCB(JointTractoryActionServer::GoalHandle & gh)
+void JointTrajectoryAction::goalCB(JointTractoryActionServer::GoalHandle gh)
 {
   ROS_INFO("Received new goal");
 
@@ -209,7 +209,7 @@ void JointTrajectoryAction::goalCB(JointTractoryActionServer::GoalHandle & gh)
   }
 }
 
-void JointTrajectoryAction::cancelCB(JointTractoryActionServer::GoalHandle & gh)
+void JointTrajectoryAction::cancelCB(JointTractoryActionServer::GoalHandle gh)
 {
   ROS_DEBUG("Received action cancel request");
   if (active_goal_ == gh)

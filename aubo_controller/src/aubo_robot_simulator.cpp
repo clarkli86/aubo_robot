@@ -329,13 +329,13 @@ protected:
 
 
     std::queue<trajectory_msgs::JointTrajectoryPoint> motion_buffer_;
-    double joint_positions_[];
     std::string initial_joint_state_;
     int rib_buffer_size_;
     bool controller_connected_flag_;
     bool position_updated_flag_;
     bool sig_shutdown_;
     bool sig_stop_;
+    double joint_positions_[];
 
 public:
     AuboRobotSimulatorNode()
@@ -398,7 +398,7 @@ public:
         }
     }
 
-    void trajectoryCallback(const trajectory_msgs::JointTrajectory::ConstPtr &msg)
+    void trajectoryCallback(trajectory_msgs::JointTrajectory::ConstPtr msg)
     {
         if(msg->points.size() == 0 || controller_enable_flag_ == false)
         {
@@ -449,7 +449,7 @@ public:
         ROS_DEBUG("Exiting trajectory callback");
     }
 
-    void ribStatusCallback(const std_msgs::Int32MultiArray::ConstPtr &msg)
+    void ribStatusCallback(std_msgs::Int32MultiArray::ConstPtr msg)
     {
         try
         {

@@ -9,7 +9,8 @@ find_package(catkin REQUIRED COMPONENTS roscpp std_msgs sensor_msgs
   control_msgs trajectory_msgs actionlib_msgs actionlib
   urdf industrial_msgs industrial_utils)
 
-#find_package(Eigen3 REQUIRED)
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
 
 catkin_package(
   CATKIN_DEPENDS
